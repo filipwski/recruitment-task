@@ -3,7 +3,7 @@ import { ENDPOINTS } from '../endpoints';
 
 const apiClient = axios.create({ baseURL: ENDPOINTS.apiEndpoint });
 
-type User = {
+export type User = {
     id: number;
     name: string;
     username: string;
@@ -27,9 +27,9 @@ type User = {
     }
 }
 
-export const getUsers = apiClient.get<User[]>('users');
+export const getUsers = async () => (await apiClient.get<User[]>('users')).data;
 
-type Comment = {
+export type Comment = {
     postId: number;
     id: number;
     name: string;
@@ -37,4 +37,4 @@ type Comment = {
     body: string;
 };
 
-export const getComments = apiClient.get<Comment[]>('comments');
+export const getComments = async () => (await apiClient.get<Comment[]>('comments')).data;
