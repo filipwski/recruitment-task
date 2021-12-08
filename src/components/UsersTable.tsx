@@ -1,5 +1,5 @@
 import { useAsync } from 'react-use';
-import { getUsers, User } from '../clients/apiClient';
+import { getUsers } from '../clients/apiClient';
 
 export const UsersTable = () => {
     const { error, loading, value } = useAsync(getUsers, []);
