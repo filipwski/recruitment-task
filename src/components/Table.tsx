@@ -1,8 +1,10 @@
-import { useTable } from "react-table";
+import { Column, useTable } from "react-table";
+import '../styles/table.css'
 
+type Dictionary = { [key: string]: string | number };
 type Props = {
-    columns: [],
-    data: [],
+    columns: Column<Dictionary>[],
+    data: {}[],
 };
 export const Table = ({ columns, data }: Props) => {
   const {
@@ -15,7 +17,7 @@ export const Table = ({ columns, data }: Props) => {
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render("Header")}</th>
+              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
             ))}
           </tr>
         ))}
@@ -26,7 +28,7 @@ export const Table = ({ columns, data }: Props) => {
           return (
             <tr {...row.getRowProps()}>
               {row.cells.map(cell => {
-                return <td {...cell.getCellProps()}>{cell.render("Cell")}</td>;
+                return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
               })}
             </tr>
           );
