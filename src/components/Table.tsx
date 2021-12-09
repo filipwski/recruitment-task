@@ -1,10 +1,10 @@
 import { Column, useTable } from "react-table";
 import '../styles/table.css'
 
-type Dictionary = { [key: string]: string | number };
+type Dictionary = { [key: string]: string | number | Dictionary };
 type Props = {
   columns: Column<Dictionary>[],
-  data: {}[],
+  data: Dictionary[],
 };
 export const Table = ({ columns, data }: Props) => {
   const {
