@@ -1,5 +1,5 @@
 import { Column, useTable } from "react-table";
-import '../styles/table.css'
+import './table.css'
 
 type Dictionary = { [key: string]: string | number | Dictionary };
 type Props = {
