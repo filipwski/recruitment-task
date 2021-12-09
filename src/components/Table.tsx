@@ -3,8 +3,8 @@ import '../styles/table.css'
 
 type Dictionary = { [key: string]: string | number };
 type Props = {
-    columns: Column<Dictionary>[],
-    data: {}[],
+  columns: Column<Dictionary>[],
+  data: {}[],
 };
 export const Table = ({ columns, data }: Props) => {
   const {
